@@ -78,15 +78,18 @@ ____
 ## Коллекции Postman
 
 [Окружение/Environments](https://github.com/lazaretov/Dummy_API/blob/main/Local.postman_environment.json)
+
 Окружение и локальные переменные, использованные при выполнении запросов.
 ____
 [Тесты](https://github.com/lazaretov/Dummy_API/blob/main/DummyAPI_post.postman_collection.json)
+
 - Комбинации позитивных тестов для query params
 - Негативные тест для query params
 - Комбинации позитивных тестов для **POST /post/create (create post)**
 - Негативные тесты для **POST /post/create (create post)**
 ____
 [Автотесты](https://github.com/lazaretov/Dummy_API/blob/main/Snipetts%2Bchai_post.postman_collection.json)
+
 Автотесты Postman с использованием встроенных сниппетов, а так же библиотеки [chai.js](https://www.chaijs.com/api/bdd/). Проверяется как минимум код ответа и тело ответа на соответствие требованиям.
 
 Например:
