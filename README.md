@@ -44,11 +44,11 @@ owner и text обязательные поля.
 
 ```
 {
-text: string(length: 6-50, preview only)
-image: string(url)
-likes: number(init value: 0)
-tags: array(string)
-owner: string(User id)
+  text: string(length: 6-50, preview only)
+  image: string(url)
+  likes: number(init value: 0)
+  tags: array(string)
+  owner: string(User id)
 }
 ```
 
@@ -67,10 +67,81 @@ owner: object(User Preview)
 }
 ```
 ____
-
 ## Майнд-карта
 Представляет собой набор тестов для объекта **POST**
 
 ![Майнд-карта](https://i.ibb.co/S7m59Vq/Dummy-API.png "Майнд-карта")
 
 Так же майнд-карта доступна по ссылке https://github.com/lazaretov/Dummy_API/blob/main/Dummy_API.pdf
+
+____
+## Коллекции Postman
+
+[Окружение/Environments](https://github.com/lazaretov/Dummy_API/blob/main/Local.postman_environment.json)
+Окружение и локальные переменные, использованные при выполнении запросов.
+____
+[Тесты](https://github.com/lazaretov/Dummy_API/blob/main/DummyAPI_post.postman_collection.json)
+- Комбинации позитивных тестов для query params
+- Негативные тест для query params
+- Комбинации позитивных тестов для **POST /post/create (create post)**
+- Негативные тесты для **POST /post/create (create post)**
+____
+[Автотесты](https://github.com/lazaretov/Dummy_API/blob/main/Snipetts%2Bchai_post.postman_collection.json)
+Автотесты Postman с использованием встроенных сниппетов, а так же библиотеки [chai.js](https://www.chaijs.com/api/bdd/). Проверяется как минимум код ответа и тело ответа на соответствие требованиям.
+
+Например:
+
+**Get post by id**
+
+``` js
+var jsonData = pm.response.json();
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Status code name has OK", function () {
+    pm.response.to.have.status("OK");
+});
+
+pm.test("Check body id", function () {
+    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get("postID"));
+});
+
+pm.test("Check body image is string", function () {
+    pm.expect(jsonData.image).to.be.a('string');
+});
+
+pm.test("Check body likes", function () {
+    pm.expect(jsonData.likes).to.eql(0);
+});
+
+pm.test("Check body link is string", function () {
+    pm.expect(jsonData.link).to.be.a('string');
+});
+
+pm.test("Check body tags is array", function () {
+    pm.expect(jsonData.tags).to.be.an('array');
+});
+
+pm.test("Check body text", function () {
+    pm.expect(jsonData.text).to.eql("Этот текст написан чтобы проверить, что он тут появляется");
+});
+
+pm.test("Check body publishDate is string", function () {
+    pm.expect(jsonData.publishDate).to.be.a('string');
+});
+
+pm.test("Check body publishDate is string", function () {
+    pm.expect(jsonData.updatedDate).to.be.a('string');
+});
+
+pm.test("Check body owner is object", function () {
+    pm.expect(jsonData.owner).to.be.an('object');
+});
+
+pm.test("Check body owner firstName is string", function () {
+    pm.expect(jsonData.owner.firstName).to.be.a('string');
+});
+```
+____
