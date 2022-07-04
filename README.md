@@ -3,6 +3,16 @@
 
 ## Оглавление
 
+- [Описание](https://github.com/lazaretov/Dummy_API#%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5)
+- [Объект тестирования **POST**](https://github.com/lazaretov/Dummy_API#post)
+    - [Запрос GET](https://github.com/lazaretov/Dummy_API#get-post-get-list)
+    - [Запрос POST](https://github.com/lazaretov/Dummy_API#post)
+- [Майнд-карта](https://github.com/lazaretov/Dummy_API#%D0%BC%D0%B0%D0%B9%D0%BD%D0%B4-%D0%BA%D0%B0%D1%80%D1%82%D0%B0)
+- [Коллекции Postman](https://github.com/lazaretov/Dummy_API#%D0%BA%D0%BE%D0%BB%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D0%B8-postman)
+    - [Окружение](https://github.com/lazaretov/Dummy_API/edit/main/README.md#%D0%BE%D0%BA%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5environments)
+    - [Тесты](https://github.com/lazaretov/Dummy_API/edit/main/README.md#%D1%82%D0%B5%D1%81%D1%82%D1%8B)
+    - [Автотесты](https://github.com/lazaretov/Dummy_API/edit/main/README.md#%D0%B0%D0%B2%D1%82%D0%BE%D1%82%D0%B5%D1%81%D1%82%D1%8B)
+
 ## Описание
 https://dummyapi.io/ представляет собой сервис для отработки навыков тестирования API. Для выполнения запросов необходима регистрация и получение app-id. В качестве объекта тестирования был выбран **POST**.
 
@@ -77,18 +87,18 @@ ____
 ____
 ## Коллекции Postman
 
-[Окружение/Environments](https://github.com/lazaretov/Dummy_API/blob/main/Local.postman_environment.json)
+### [Окружение/Environments](https://github.com/lazaretov/Dummy_API/blob/main/Local.postman_environment.json)
 
 Окружение и локальные переменные, использованные при выполнении запросов.
 ____
-[Тесты](https://github.com/lazaretov/Dummy_API/blob/main/DummyAPI_post.postman_collection.json)
+### [Тесты](https://github.com/lazaretov/Dummy_API/blob/main/DummyAPI_post.postman_collection.json)
 
 - Комбинации позитивных тестов для query params
 - Негативные тест для query params
 - Комбинации позитивных тестов для **POST /post/create (create post)**
 - Негативные тесты для **POST /post/create (create post)**
 ____
-[Автотесты](https://github.com/lazaretov/Dummy_API/blob/main/Snipetts%2Bchai_post.postman_collection.json)
+### [Автотесты](https://github.com/lazaretov/Dummy_API/blob/main/Snipetts%2Bchai_post.postman_collection.json)
 
 Автотесты Postman с использованием встроенных сниппетов, а так же библиотеки [chai.js](https://www.chaijs.com/api/bdd/). Проверяется как минимум код ответа и тело ответа на соответствие требованиям.
 
